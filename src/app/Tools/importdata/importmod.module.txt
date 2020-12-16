@@ -1,0 +1,21 @@
+import { ImportdataComponent } from './importdata.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ImportdatarouRoutingModule } from './importdatarou.route.txt';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+
+import { MDBSpinningPreloader, MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
+
+@NgModule({
+  declarations: [ImportdataComponent],
+  exports:[ImportdataComponent],
+  imports: [
+    CommonModule , ImportdatarouRoutingModule, ReactiveFormsModule,FormsModule,
+    //MDBBootstrapModulesPro,
+        ToastModule,
+    MDBBootstrapModulesPro,
+  ]
+})
+export class ImportmodModule { }

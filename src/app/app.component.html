@@ -1,0 +1,149 @@
+<!--Double navigation-->
+<header>
+  <!-- Sidebar navigation -->
+  <mdb-side-nav #sidenav class="sn-bg-1 fixed" [fixed]="true">
+
+    <mdb-navbar-brand>
+      <!-- Logo -->
+      <li>
+        <div class="logo-wrapper waves-light">
+          <a href="#"><img src="" class="img-fluid flex-center" alt="IBARAPA"></a>
+        </div>
+      </li>
+      <!--/. Logo -->
+    </mdb-navbar-brand>
+
+    <links>
+      <!--Social-->
+      <li>
+        <ul class="social">
+          <li><a class="icons-sm fb-ic"><mdb-icon fab icon="facebook"> </mdb-icon></a></li>
+          <li><a class="icons-sm pin-ic"><mdb-icon fab icon="pinterest"> </mdb-icon></a></li>
+          <li><a class="icons-sm gplus-ic"><mdb-icon fab icon="google-plus"> </mdb-icon></a></li>
+          <li><a class="icons-sm tw-ic"><mdb-icon fab icon="twitter"> </mdb-icon></a></li>
+        </ul>
+      </li>
+      <!--/Social-->
+      <!--Search Form-->
+      <li>
+        <form class="search-form" role="search">
+          <div class="form-group md-form mt-0 pt-1" mdbWavesEffect>
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </li>
+      <!--/.Search Form-->
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <mdb-accordion [multiple]="false" aria-multiselectable="false">
+           <!-- Simple link -->
+            <mdb-accordion-item class="no-collase">
+              <mdb-accordion-item-head mdbWavesEffect routerLink="importdata"  ><mdb-icon far icon="hand-pointer"></mdb-icon> Import Data
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body  ></mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+
+            <!-- Collapsible link -->
+            <mdb-accordion-item>
+              <mdb-accordion-item-head mdbWavesEffect><mdb-icon fas icon="chevron-right"></mdb-icon> Print
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body>
+                <ul>
+                  <li><a routerLink="Notification" mdbWavesEffect>Notification</a></li>
+                  <li><a routerLink="Transcript" mdbWavesEffect>Transcript</a></li>
+                </ul>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+ 
+
+           <!--
+            <mdb-accordion-item>
+              <mdb-accordion-item-head mdbWavesEffect><mdb-icon far icon="eye"></mdb-icon> Collapsible menu 2
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body>
+                <ul>
+                  <li><a href="#" mdbWavesEffect>Link 1</a></li>
+                  <li><a href="#" mdbWavesEffect>Link 2</a></li>
+                </ul>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+          
+            <mdb-accordion-item class="no-collase">
+              <mdb-accordion-item-head mdbWavesEffect><mdb-icon far icon="gem"></mdb-icon> Simple link 2</mdb-accordion-item-head>
+              <mdb-accordion-item-body></mdb-accordion-item-body>
+            </mdb-accordion-item>
+ -->
+          </mdb-accordion>
+        </ul>
+      </li>
+      <!--/. Side navigation links -->
+    </links>
+    <div class="sidenav-bg mask-strong"></div>
+  </mdb-side-nav>
+  <!--/. Sidebar navigation -->
+
+  <!-- Navbar -->
+  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav"
+              [containerInside]="false">
+
+    <navlinks class="navbar-container">
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+        <a (click)="sidenav.show()" class="button-collapse"><mdb-icon fas icon="bars"></mdb-icon></a>
+      </div>
+      <!--/. SideNav slide-out button -->
+    </navlinks>
+
+    <mdb-navbar-brand>
+      <!-- Breadcrumb-->
+      <div class="breadcrumbs breadcrumb-dn mr-auto">
+        <p>Transcript & Notification ...@ 2020</p>
+      </div>
+      <!--/. Breadcrumb-->
+    </mdb-navbar-brand>
+
+    <navlinks>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> <span
+            class="clearfix d-none d-sm-inline-block">Contact-- Support</span></a>
+        </li>
+        <!-- 
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon far icon="comments"></mdb-icon> <span
+            class="clearfix d-none d-sm-inline-block">Support</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="user"></mdb-icon> <span
+            class="clearfix d-none d-sm-inline-block">Account</span></a>
+        </li>
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Dropdown
+          </a>
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+    </navlinks>
+  </mdb-navbar>
+  <!--/. Navbar -->
+
+</header>
+<!--/.Double navigation-->
+
+<!--Main Layout-->
+<main>
+   <router-outlet></router-outlet>
+     <mdb-card>
+       
+     </mdb-card>
+</main>
+<!--/Main layout-->

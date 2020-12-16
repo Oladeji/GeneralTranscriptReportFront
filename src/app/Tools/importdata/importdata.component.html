@@ -1,0 +1,157 @@
+   <!--Grid row-->
+<div class="row">
+  <div class="col-md-3"></div>
+  <!--Grid column-->
+  <div class="col-md-6">
+
+    <mdb-card>
+        <mdb-card-header class="info-color white-text text-center py-4">
+            <h5>
+            <strong>IMPORT TRANSCRIPT DATA FROM RESULTS</strong>
+            </h5>
+       </mdb-card-header>
+
+  <mdb-card-body class="px-lg-5 pt-0">
+
+  <form
+    class="text-center"     style="color: #757575;"
+    [formGroup]="importdetails"     
+    (ngSubmit)="onSubmit()"
+  >
+  <div class="file-field md-form">
+    <div mdbBtn color="primary" size="sm" class="waves-light" mdbWavesEffect>
+      <span>Choose file</span>
+      <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-10 mx-auto d-flex " style="padding: 0; margin: 0;">
+        <div class="md-form" style="padding: 0; margin: 0;">
+          <mdb-checkbox mdbValidate formControlName="usedeptname" #usedeptname (change)="showOptions()"
+            >UPDATE DEPARTMENT NAME</mdb-checkbox
+          >
+          <!-- <mdb-error *ngIf="copy.invalid && (copy.dirty || copy.touched)"
+            >Input invalid</mdb-error
+          >
+          <mdb-success *ngIf="copy.valid && (copy.dirty || copy.touched)"
+            >Input valid</mdb-success
+          > -->
+        </div>
+      </div>
+    </div>
+<div  *ngIf="usedeptname.checked" class="md-form mt-3">
+      <input
+        type="text"
+        formControlName="realdeptname"
+        id="realdeptnameid"
+        class="form-control"
+        mdbInput
+        mdbValidate
+      />
+      <!-- <label for="materialContactFormName">Name</label>
+      <mdb-error *ngIf="name.invalid && (name.dirty || name.touched)"
+        >Input invalid</mdb-error
+      >
+      <mdb-success *ngIf="name.valid && (name.dirty || name.touched)"
+        >Input valid</mdb-success
+      > -->
+    </div>
+
+
+     <div class="row">
+
+<div class="md-form mt-3">
+      <input
+        type="text"
+        formControlName="Sess"
+        id="Sessid"
+        class="form-control"
+        mdbInput
+        mdbValidate
+      />
+      <label for="materialContactFormName">SESSION</label>
+      <!-- <mdb-error *ngIf="name.invalid && (name.dirty || name.touched)"
+        >Input invalid</mdb-error
+      >
+      <mdb-success *ngIf="name.valid && (name.dirty || name.touched)"
+        >Input valid</mdb-success
+      > -->
+    </div>
+    <div class="md-form mt-3">
+      <input
+        type="text"
+        formControlName="Sem"
+        id="Semid"
+        class="form-control"
+        mdbInput
+        mdbValidate
+      />
+      <label for="materialContactFormName">SEMESTER</label>
+      <!-- <mdb-error *ngIf="name.invalid && (name.dirty || name.touched)"
+        >Input invalid</mdb-error
+      >
+      <mdb-success *ngIf="name.valid && (name.dirty || name.touched)"
+        >Input valid</mdb-success
+      > -->
+    </div>
+
+
+
+
+     </div>
+
+    <span>SIGNATORY</span>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="md-form">
+          <mdb-select  formControlName="signatorydata"   [options]="signatories.AllSinatory"    placeholder="Choose your option" mdbValidate > 
+                      
+          </mdb-select>
+
+                <!-- <mat-select placeholder="SIGNATORY"  formControlName="signatorydata">
+                          <mat-option *ngFor="let sig of signatories.AllSinatory" [value]="sig"    >
+                            {{sig.signatory  }}    {{sig.designation  }}   {{sig.standingfor  }} 
+                        
+                          </mat-option>
+                        </mat-select> -->
+
+
+           <mdb-error *ngIf="signatorydatas.invalid && (signatorydatas.dirty || signatorydatas.touched)"    >Input invalid</mdb-error      >
+          <mdb-success *ngIf="signatorydatas.valid && (signatorydatas.dirty || signatorydatas.touched)"      >Input valid</mdb-success   >
+           
+        </div>
+      </div>
+    </div>
+    
+<mdb-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="'SELECT EFFECTIVE DATE'" formControlName="effectivedate"
+  required></mdb-date-picker>
+
+
+
+
+    <button
+      mdbBtn
+      color="info"
+      outline="true"
+      rounded="true"
+      block="true"
+      class="z-depth-0 my-4 waves-effect"
+      mdbWavesEffect
+      type="submit"
+     
+    >
+      UPLOAD INFORMATION
+    </button>
+  </form>
+
+  </mdb-card-body>
+
+</mdb-card>
+ </div>
+  <!--Grid column-->
+ <div class="col-md-3"></div>
+</div>
+<!--Grid row-->

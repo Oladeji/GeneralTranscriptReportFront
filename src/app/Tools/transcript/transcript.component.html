@@ -1,0 +1,87 @@
+   <!--Grid row-->
+<div class="row">
+  <div class="col-md-3"></div>
+  <!--Grid column-->
+  <div class="col-md-6">
+
+    <mdb-card>
+        <mdb-card-header class="info-color white-text text-center py-4">
+            <h5>
+            <strong>PRINT TRANSCRIPT</strong>
+            </h5>
+       </mdb-card-header>
+
+  <mdb-card-body class="px-lg-5 pt-0">
+
+  <form
+    class="text-center"     style="color: #757575;"  [formGroup]="TranscriptFG"    >
+  
+        <!-- Name -->
+      <div class="md-form mt-3">
+        <input type="text" id="materialContactFormName" class="form-control" mdbInput formControlName="MatNo"  >
+        <label for="materialContactFormName">MATRIC NO</label>
+      </div>
+
+
+<div>
+  <div class="md-form mt-3">
+      <input  type="text"   formControlName="Aset" id="Asetid"  class="form-control"  mdbInput  mdbValidate  />       
+      <label for="materialContactFormName">SET</label>
+  </div>
+</div>
+
+<div >
+  <div class="md-form mt-3">
+      <input  type="text"   formControlName="RefId" id="RefIdid"  class="form-control"  mdbInput  mdbValidate  />       
+      <label for="materialContactFormName">PAYMENT REF ID</label>
+  </div>
+</div>
+
+<div >
+      <!--Message-->
+      <div class="md-form-3">
+           <label for="materialContactFormMessage">RECEIPIENT'S ADDRESS </label>
+        <textarea formControlName="Address" type="text" id="materialContactFormMessage" class="form-control md-textarea" mdbInput></textarea>
+       
+      </div>
+</div>
+
+
+    <span>SIGNATORY</span>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="md-form">
+          <mdb-select  formControlName="signatorydata"   [options]="signatories.AllSinatory"    placeholder="Choose your option" mdbValidate > 
+                      
+          </mdb-select>
+
+
+
+           <mdb-error *ngIf="signatorydatas.invalid && (signatorydatas.dirty || signatorydatas.touched)"    >Input invalid</mdb-error      >
+          <mdb-success *ngIf="signatorydatas.valid && (signatorydatas.dirty || signatorydatas.touched)"      >Input valid</mdb-success   >
+           
+        </div>
+      </div>
+    </div>
+
+
+ 
+
+
+
+ 
+
+    <button       mdbBtn     (click)="searchfortranscript(TranscriptFG.value)"   color="info"      outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect   >
+     
+      PRINT TRANSCRIPT
+    </button>
+  </form>
+
+  </mdb-card-body>
+
+</mdb-card>
+ </div>
+  <!--Grid column-->
+ <div class="col-md-3"></div>
+</div>
+<!--Grid row-->
